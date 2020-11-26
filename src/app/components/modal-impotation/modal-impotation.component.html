@@ -1,0 +1,28 @@
+<div class="modal  fade  animated fadeInDown" #modalImportation id="modalImportation" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle"><i class="far fa-copy fa-2x"></i><i class="fas fa-file-upload"></i>Importación de bases Emergia</h5>
+                <button type="button" class="close pointer" (click)="hideModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <form class="form" ngNativeValidate>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 animated fadeIn  delay-2s">
+                            <div class="form-group">
+                                <h4 class="card-title">Fichero Emergia <span class="text-danger" style="font-weight:bold" *ngIf="!fichero">*</span></h4>
+                                <label for="input-file-now">Arrastra fichero con la siguiente extension (csv)</label>
+                                <input required type="file" data-max-file-size-preview="5M" data-allowed-file-extensions="csv" data-max-file-size="5M" #flFicichero (change)="importationService.file = $event.target.files" name="fichero" id="importation" data-show-remove="true" />
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" (click)="importationService.uploadFileAndValidate('modalImportation')" class="btn btn-primary btn-sm float-right pointer"><i class="fas fa-upload"></i>Validar</button>
+                    <button type="button" class="btn btn-secondary btn-sm float-right pointer mr-1" (click)="hideModal()"><i class="fas fa-window-close"></i> Cerrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <p>{{importationService.structureOfCsv}}</p>
+</div>

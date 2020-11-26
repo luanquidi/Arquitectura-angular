@@ -1,0 +1,77 @@
+<div class="container-filtro-empleados">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <div class="d-flex no-block">
+                        <h4 class="card-title"><span class="lstick"></span>Importación</h4>
+                    </div>
+                    <div class="content">
+                        <div class="card card-border container p-4">
+                            <form [formGroup]="form" novalidate>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <small>PAIS</small>
+                                        <!-- <span class="text-danger" *ngIf="form.controls['LoginPsicologa'].errors && this.form.get('LoginPsicologa').touched">* </span> -->
+                                        <select class="form-control form-control-sm" name="pais" formControlName="Pais">
+                                            <option value="" selected>Seleccione...</option>
+                                            <!-- <option [value]="psicologa.Login" *ngFor="let psicologa of antService.listDropDownData.ListaPsicologo "> {{ psicologa | nombreCompleto }}</option> -->
+                                        </select>
+                                        <!-- <small class="text-danger" *ngIf="form.controls['LoginPsicologa'].errors && this.form.get('LoginPsicologa').touched">Psicologa que diligencia es requerido.</small> -->
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <small>CLIENTE</small>
+                                        <!-- <span class="text-danger" *ngIf="form.controls['LoginPsicologa'].errors && this.form.get('LoginPsicologa').touched">* </span> -->
+                                        <select class="form-control form-control-sm" name="cliente" formControlName="Cliente">
+                                            <option value="" selected>Seleccione...</option>
+                                            <!-- <option [value]="psicologa.Login" *ngFor="let psicologa of antService.listDropDownData.ListaPsicologo "> {{ psicologa | nombreCompleto }}</option> -->
+                                        </select>
+                                        <!-- <small class="text-danger" *ngIf="form.controls['LoginPsicologa'].errors && this.form.get('LoginPsicologa').touched">Psicologa que diligencia es requerido.</small> -->
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <small> NOMBRE FORMATO IMPORTACIÓN </small>
+                                        <!-- <span class="text-danger" *ngIf="form.controls['IdLegal'].errors && this.form.get('IdLegal').touched">* </span> -->
+                                        <input type="text" class="form-control form-control-sm" name="nombreFormato" formControlName="NombreFormato" />
+                                        <!-- <small class="text-danger" *ngIf="form.controls['IdLegal'].errors && this.form.get('IdLegal').touched">El Id Legal es requerido.</small>
+                                        <br *ngIf="form.controls['IdLegal'].errors && this.form.get('IdLegal').touched" />
+                                        <small class="text-danger" *ngIf="form.controls['IdLegal'].errors?.minlength && this.form.get('IdLegal').touched">Mínimo 4 caracteres. </small>
+                                        <br *ngIf="form.controls['IdLegal'].errors?.minlength && this.form.get('IdLegal').touched" />
+                                        <small class="text-danger" *ngIf="form.controls['IdLegal'].errors?.maxlength && this.form.get('IdLegal').touched">Máximo 15 caracteres. </small>
+                                        <br *ngIf="form.controls['IdLegal'].errors?.maxlength && this.form.get('IdLegal').touched" />
+                                        <small class="text-danger" *ngIf="form.controls['IdLegal'].errors?.pattern && this.form.get('IdLegal').touched">El formato no es válido. </small> -->
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <small> FICHERO </small>
+                                        <br>
+                                        <!-- <span class="text-danger" *ngIf="form.controls['IdLegal'].errors && this.form.get('IdLegal').touched">* </span> -->
+                                        <button type="button" class="btn btn-success btn-sm" (click)="showModalImportation()">Subir Fichero</button>
+                                        <br>
+                                        <span *ngIf="importationService.file">{{importationService.file[0].name}}</span>
+                                        <!-- <small class="text-danger" *ngIf="form.controls['IdLegal'].errors && this.form.get('IdLegal').touched">El Id Legal es requerido.</small>
+                                        <br *ngIf="form.controls['IdLegal'].errors && this.form.get('IdLegal').touched" />
+                                        <small class="text-danger" *ngIf="form.controls['IdLegal'].errors?.minlength && this.form.get('IdLegal').touched">Mínimo 4 caracteres. </small>
+                                        <br *ngIf="form.controls['IdLegal'].errors?.minlength && this.form.get('IdLegal').touched" />
+                                        <small class="text-danger" *ngIf="form.controls['IdLegal'].errors?.maxlength && this.form.get('IdLegal').touched">Máximo 15 caracteres. </small>
+                                        <br *ngIf="form.controls['IdLegal'].errors?.maxlength && this.form.get('IdLegal').touched" />
+                                        <small class="text-danger" *ngIf="form.controls['IdLegal'].errors?.pattern && this.form.get('IdLegal').touched">El formato no es válido. </small> -->
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <div class="form-actions text-center">
+                                            <button type="button" (click)="importationService.fileChangeListener()" *ngIf="importationService.file" class="btn btn-info btn-sm">Cargar</button>
+                                            <button type="button" class="btn btn-inverse btn-sm ml-2" (click)="backView()">Atrás</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <h4 class="card-title"><span class="lstick"></span>Estructura CSV</h4>
+                        <div>
+                            <ng2-smart-table [settings]="settings" [source]="importationService.data"></ng2-smart-table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-modal-impotation></app-modal-impotation>

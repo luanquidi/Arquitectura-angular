@@ -1,0 +1,231 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/* @import "~@swimlane/ngx-datatable/release/index.css";
+@import "~@swimlane/ngx-datatable/release/themes/material.css";
+@import "~@swimlane/ngx-datatable/release/assets/icons.css";
+@import "~@ng-select/ng-select/themes/default.theme.css"; */
+
+#themecolors li {
+    cursor: pointer;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.w150 {
+    width: 150px;
+}
+
+.img-50 {
+    width: 50px;
+}
+
+.w70 {
+    width: 70px;
+}
+
+.resaltar:hover {
+    /* background:  grey; */
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+.resaltar {
+    overflow: hidden;
+}
+
+.fondo-negro {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1050;
+    padding-top: 100px;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.oculto {
+    display: none;
+}
+
+.espacio-10px {
+    margin-left: 10px;
+}
+
+.sizeInputCalendar {
+    height: calc(2.25rem + 2px);
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+ng-select {
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+
+/*medias queries de template modificadas*/
+
+@media (min-width: 768px) {
+    .mini-sidebar .sidebar-nav #sidebarnav>li>ul {
+        width: 300px;
+    }
+}
+
+.em-background-white-color {
+    background-color: #fff;
+}
+
+.em-background-primary-color {
+    background-color: #ff9900;
+}
+
+.em-background-primary-color-alt {
+    background-color: #e36c09;
+}
+
+.em-background-complementary-color {
+    background-color: #00bcdd;
+}
+
+.em-background-complementary-color-alt {
+    background-color: #3aa1e5;
+}
+
+.em-background-secundary-color {
+    background-color: #d9d9d9;
+}
+
+.em-background-secundary-color-alt {
+    background-color: #a8abaa;
+}
+
+#ProcesoAjax {
+    background-color: rgba(230, 230, 230, 0.5);
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.spinner {
+    margin: auto;
+    top: 40%;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    text-align: center;
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+}
+
+.dot1,
+.dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #1976d2;
+    border-radius: 100%;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-rotate {
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes sk-rotate {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes sk-bounce {
+    0%,
+    100% {
+        -webkit-transform: scale(0.0)
+    }
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes sk-bounce {
+    0%,
+    100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}

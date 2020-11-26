@@ -19,7 +19,12 @@
     "@angular/platform-browser": "~10.0.6",
     "@angular/platform-browser-dynamic": "~10.0.6",
     "@angular/router": "~10.0.6",
+    "@swimlane/ngx-datatable": "^18.0.0",
+    "ng2-completer": "^9.0.1",
+    "ng2-smart-table": "^1.7.2",
+    "ngx-csv-parser": "0.0.6",
     "rxjs": "~6.5.5",
+    "sweetalert2": "^10.10.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
